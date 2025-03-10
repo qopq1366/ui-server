@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель управления</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script src="admin.js"></script>
+</head>
+<body class="admin-page">
+    <div id="login-form" class="login-container animate__animated animate__fadeIn">
+        <div class="login-box animate__animated animate__fadeInUp">
+            <h2>Вход в панель управления</h2>
+            <div class="login-controls">
+                <input type="text" id="username" placeholder="Имя пользователя">
+                <input type="password" id="password" placeholder="Пароль">
+                <button id="login-btn" class="primary-btn">Войти</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="admin-content" class="admin-container hidden animate__animated animate__fadeIn">
+        <nav class="admin-nav animate__animated animate__slideInDown">
+            <div class="logo">Панель управления</div>
+            <div class="nav-links">
+                <button onclick="switchTab('content')" class="nav-btn active">Контент</button>
+                <button onclick="switchTab('users')" class="nav-btn">Пользователи</button>
+                <button onclick="switchTab('history')" class="nav-btn">История</button>
+                <button onclick="switchTab('database')" class="nav-btn">База данных</button>
+                <button onclick="toggleTheme()" class="nav-btn theme-toggle" title="Сменить тему">
+                    <span class="theme-icon">🌓</span>
+                </button>
+                <button onclick="logout()" class="nav-btn logout">Выход</button>
+            </div>
+        </nav>
+
+        <div class="admin-main">
+            <div id="content-panel" class="admin-panel animate__animated animate__fadeIn">
+                <div class="toolbar animate__animated animate__fadeInDown animate__delay-1s">
+                    <button onclick="saveContent()" class="primary-btn">Сохранить</button>
+                    <button onclick="previewContent()" class="secondary-btn">Предпросмотр</button>
+                </div>
+                <div id="editor" class="animate__animated animate__fadeIn animate__delay-1s"></div>
+                <div id="preview" class="preview hidden animate__animated animate__fadeIn"></div>
+            </div>
+
+            <div id="users-panel" class="admin-panel hidden animate__animated animate__fadeIn">
+                <h2 class="animate__animated animate__fadeInDown">Управление пользователями</h2>
+                <button id="add-user-btn" onclick="showAddUserForm()" class="primary-btn">
+                    Добавить пользователя
+                </button>
+                <div class="users-list"></div>
+            </div>
+
+            <div id="history-panel" class="admin-panel hidden animate__animated animate__fadeIn">
+                <h2 class="animate__animated animate__fadeInDown">История изменений</h2>
+                <div class="history-list"></div>
+            </div>
+
+            <div id="database-panel" class="admin-panel hidden animate__animated animate__fadeIn">
+                <h2 class="animate__animated animate__fadeInDown">Управление базой данных</h2>
+                <div class="database-controls">
+                    <button onclick="refreshTables()" class="primary-btn">Обновить список таблиц</button>
+                    <button onclick="showCreateTableForm()" class="primary-btn">Создать таблицу</button>
+                </div>
+                <div class="tables-list"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Удаляем подключение chat.js -->
+</head>
+<body>
+    <div class="hero">
+        <h1 class="animate__animated animate__fadeInDown">Добро пожаловать</h1>
+        <p class="animate__animated animate__fadeIn animate__delay-1s">
+            Эта страница создана с любовью к веб-разработке. Здесь вы найдете 
+            современный дизайн, плавные анимации и удобный интерфейс.
+        </p>
+        <div class="features animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="feature-card">
+                <span class="icon">🎨</span>
+                <h3>Современный дизайн</h3>
+                <p>Красивые цвета и стильные элементы</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">⚡</span>
+                <h3>Быстрая работа</h3>
+                <p>Оптимизированная производительность</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">🛡️</span>
+                <h3>Безопасность</h3>
+                <p>Надежная защита данных</p>
+            </div>
+        </div>
+        <div class="buttons animate__animated animate__fadeInUp animate__delay-3s">
+            <a href="admin.html" class="btn primary-btn">Панель администратора</a>
+            <button class="btn secondary-btn" onclick="showDemo()">Демонстрация</button>
+        </div>
+    </div>
+</body>
+</html>
